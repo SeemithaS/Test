@@ -1,0 +1,206 @@
+1. Method Overloading: Method overloading means a class has more than one method with the same name but having different parameters.
+
+Ex: class Email{
+
+static void sendEmail(){
+
+System.out.println("Invoking sendEmail method ");
+}
+
+static void sendEmail(String name,String email){
+
+System.out.println("Invoking sendEmail method with the parameters");
+}
+
+}
+
+class EmailRunner{
+
+public static void main(String[] args){
+
+System.out.println("Running main in EmailRunner");
+
+Email.sendEmail();
+Email.sendEmail("Seemitha","seemitha@gmail.com");
+}
+}
+
+2. Variables is container to store the information.
+
+There are 4 types of variables:
+
+Local Variable: Variable can be declared within the method.
+
+Static variable: a variable can be initialized only once. This variable can share the common properties for all the instances of class.
+
+Instance variable:  a variable can be decalred within the class but outside the method.
+
+Parameter Variables: A variable can be declared inside the paranthesis in the method.
+
+Ex:
+Class Age{
+
+static int seemitha=22;
+int shravya=23;
+
+static void year(int kavya){
+kavya=12;
+System.out.println("Parameter variable is:" +kavya);
+}
+
+public static void main(String[] args){
+int sinchana=19;
+Age aga=new Age();
+System.out.println("Static variable is:" +seemitha);
+System.out.println("Instance  variable is:" +age.shravya);
+System.out.println("Local variable is:" +sinchana);
+}
+}
+}
+
+3.Once the java program is executed by jvm, the primary memory is created this we will called as heap memory.
+this heap memory will consist of metaspace,constant pool,instance memory along with it will have stack and stack frame.
+
+> In the metaspace all the classes will load.
+> if the main method is present in the program it will create the stack. 
+> The stack execute all the methods.
+> The stack frame contains method name,current line number and local variables.
+> In the constant pool all the variables value will store .
+> tha address of that value is stored in the stack frame.
+>in the instance memory the memory is created for the object. 
+
+
+4. class Store{
+
+int rice=20;
+int wheat=30;
+
+Store(){
+
+System.out.println("Invoking no argument constructor in Store");
+}
+
+Store(int rice,String int){
+
+this.rice=rice;
+this.wheat=wheat;
+}
+}
+
+
+class StoreRunner{
+
+public static void main(String[] args){
+
+Store store=new Store();
+System.out.println("Rice:"+store.rice);
+System.out.println("Rice:"+store.wheat);
+
+Store store1=new Store();
+System.out.println("Rice:"+store1.rice);
+System.out.println("Rice:"+store1.wheat);
+}
+
+}
+
+
+5.class Person{
+
+public void Run(){
+System.out.println("Invoking Run method ");
+}
+
+public void Run(String name,int speed){
+
+System.out.println("Invoking run method with the parameters");
+
+System.out.println("Name:"+name);
+System.out.println("Speed:"+speed);
+
+}
+
+}
+
+class PersonRunner{
+
+public static void main(String[] args){
+
+System.out.println("Running main in PersonRunner");
+
+Person person=new Person();
+person.run();
+
+Person person1=new Person();
+person.run("Seemitha",100);
+
+}
+}
+
+6. class Student{
+
+static String college="SDMIT";
+static String collegeCode="SU";
+
+static void writeTest(int rollno){
+
+System.out.println("Invoking writeTest in Student);
+System.out.println("Roll no:"+rollno);
+}
+
+
+public static void main(String[] args){
+
+System.out.println("Invoking main in Student);
+System.out.println("College name:" +college);
+System.out.println("College Code:"+collegeCode);
+writeTest(76);
+
+}
+
+}
+
+7.class Store{
+
+String rice="Rice";
+String whea="Wheat";
+
+Store(){
+super(); //default super constructor chaining
+System.out.println("Invoking no argument constructor in Store");
+}
+
+Store(String rice,String wheat){
+
+this.rice=rice;
+this.wheat=wheat;
+}
+}
+Store(String rice,String wheat,String egg){
+this.Store(rice,wheat); 
+this.egg=egg;
+}
+}
+
+class StoreRunner{
+
+public static void main(String[] args){
+
+Store store=new Store();
+System.out.println("Rice:"+store.rice);
+System.out.println("Wheat:"+store.wheat);
+
+Store store1=new Store();
+System.out.println("Rice:"+store1.rice);
+System.out.println("Rice:"+store1.wheat);
+
+Store store1=new Store();
+System.out.println("Rice:"+store2.rice);
+System.out.println("Rice:"+store2.wheat);
+System.out.println("Egg:"+store2.egg);
+
+}
+
+}
+
+
+
